@@ -1,0 +1,45 @@
+To fix this issue, you can modify your CSS in one of several ways, depending on your intended outcome:
+
+**Option 1: Make the !important declaration more specific**
+
+Add the `#my-id` ID selector to the !important declaration:
+
+```css
+div {
+  color: blue;
+}
+
+#my-id.my-class {
+  color: red !important;
+}
+
+#my-id {
+  color: green;
+}
+```
+
+**Option 2: Avoid !important, and use a more specific rule instead**
+
+Avoid using `!important` altogether. Use more specific selectors where applicable. This leads to more maintainable and predictable CSS.
+
+```css
+div {
+  color: blue;
+}
+
+.my-class {
+  color: red;
+}
+
+#my-id {
+  color: green;
+}
+
+#my-id.my-class {
+  color: purple;
+}
+```
+
+**Option 3: Re-evaluate your CSS structure**
+
+Sometimes, the need for `!important` arises from poorly structured CSS. Re-evaluate your approach.  Use proper class and ID naming conventions to make your CSS easier to maintain and less reliant on `!important`.

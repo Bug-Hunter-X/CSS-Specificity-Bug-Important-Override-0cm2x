@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.my-class {
+  color: red !important;
+}
+
+#my-id {
+  color: green;
+}
+
+#my-id.my-class {
+  color: purple;
+}
+```
+
+This code demonstrates a scenario where a more specific selector overrides an !important declaration. The id selector combined with the class selector is more specific than the class selector with !important. The expected behavior might be for the red color to be applied because of the !important declaration. However, due to the specificity of CSS selectors, the purple color will actually be applied. The !important declaration is overridden by a more specific selector.
